@@ -25,8 +25,8 @@ Counter(){
   frame.add(left);
   frame.add(right);
 
-  JLabel leftLabel = new JLabel("Count: " + leftCount);
-  JLabel rightLabel = new JLabel("Count: " + rightCount);
+  leftLabel = new JLabel("Count: " + leftCount);
+  rightLabel = new JLabel("Count: " + rightCount);
 
   frame.add(leftLabel);
   frame.add(rightLabel);
@@ -37,18 +37,19 @@ Counter(){
   frame.setVisible(true);
   }
   public void actionPerformed(ActionEvent ae){
-
     if(ae.getActionCommand().equals("Left")) {
       leftCount++;
-      leftLabel.setText("You Pressed Left!");
+      leftLabel.setText("Count: " + leftCount);
   }
     else if (ae.getActionCommand().equals("Right")) {
       rightCount++;
-      rightLabel.setText("You Pressed Right!");
+      rightLabel.setText("Count: " + rightCount);
     }
     else if(ae.getActionCommand().equals("Reset")){
       rightCount = 0;
       leftCount = 0;
+      leftLabel.setText("Count: " + leftCount);
+      rightLabel.setText("Count: " + rightCount);
     }
     }
 }
